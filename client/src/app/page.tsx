@@ -1,76 +1,80 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-
 export default function Home() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  // Function to handle form submission
-  const handleSubmit = async () => {
-    const userData = {
-      name,
-      age,
-      phoneNumber,
-    };
-
-    // Send the data to the backend
-    try {
-      const response = await fetch("http://127.0.0.1:3001/create-user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit data");
-      }
-
-      const data = await response.json();
-      console.log("User created:", data);
-      // Optionally, reset form after successful submission
-      setName("");
-      setAge("");
-      setPhoneNumber("");
-    } catch (error) {
-      console.error("Error submitting user data:", error);
-    }
-  };
-
-  return (
-    <div className="m-10 flex gap-10 flex-col">
-      <div className="flex">
-        <Card>
-          <CardHeader>Form</CardHeader>
-          <CardContent>
-            <Input
-              placeholder="Name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
-            <Input
-              placeholder="Age"
-              value={age}
-              onChange={(event) => setAge(event.target.value)}
-            />
-            <Input
-              placeholder="Phone Number"
-              value={phoneNumber}
-              onChange={(event) => setPhoneNumber(event.target.value)}
-            />
-            <Button onClick={handleSubmit}>Submit</Button>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  );
+  return <div>Hi</div>;
 }
+
+// "use client";
+
+// import { Button } from "@/components/ui/button";
+// import { Card, CardContent, CardHeader } from "@/components/ui/card";
+// import { Input } from "@/components/ui/input";
+// import { useState } from "react";
+
+// export default function Home() {
+//   const [name, setName] = useState("");
+//   const [age, setAge] = useState("");
+//   const [phoneNumber, setPhoneNumber] = useState("");
+
+//   // Function to handle form submission
+//   const handleSubmit = async () => {
+//     const userData = {
+//       name,
+//       age,
+//       phoneNumber,
+//     };
+
+//     // Send the data to the backend
+//     try {
+//       const response = await fetch("http://127.0.0.1:3001/create-user", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(userData),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error("Failed to submit data");
+//       }
+
+//       const data = await response.json();
+//       console.log("User created:", data);
+//       // Optionally, reset form after successful submission
+//       setName("");
+//       setAge("");
+//       setPhoneNumber("");
+//     } catch (error) {
+//       console.error("Error submitting user data:", error);
+//     }
+//   };
+
+//   return (
+//     <div className="m-10 flex gap-10 flex-col">
+//       <div className="flex">
+//         <Card>
+//           <CardHeader>Form</CardHeader>
+//           <CardContent>
+//             <Input
+//               placeholder="Name"
+//               value={name}
+//               onChange={(event) => setName(event.target.value)}
+//             />
+//             <Input
+//               placeholder="Age"
+//               value={age}
+//               onChange={(event) => setAge(event.target.value)}
+//             />
+//             <Input
+//               placeholder="Phone Number"
+//               value={phoneNumber}
+//               onChange={(event) => setPhoneNumber(event.target.value)}
+//             />
+//             <Button onClick={handleSubmit}>Submit</Button>
+//           </CardContent>
+//         </Card>
+//       </div>
+//     </div>
+//   );
+// }
 
 // "use client"; //haritsuulj harah
 
@@ -286,24 +290,4 @@ export default function Home() {
 
 // export default TestPage;
 
-// import Card from "@/components/Card";
-// import fingerFoodImage from "../assets/finger-food.png";
-
-// export default function Home() {
-//   const cardData = [
-//     {
-//       title: "Finger food ",
-//       price: 12.99,
-//       description:
-//         "Fluffy pancakes stacked with fruits, cream, syrup, and powdered sugar.",
-//       img: fingerFoodImage,
-//     },
-//     {
-//       title: "FCranberry Brie Bites",
-//       price: 12.99,
-//       description:
-//         "Fluffy pancakes stacked with fruits, cream, syrup, and powdered sugar.",
-//       img: "",
-//     },
-//   ];
-// }
+//
